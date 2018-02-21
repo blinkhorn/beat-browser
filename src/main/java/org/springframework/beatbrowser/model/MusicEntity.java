@@ -10,7 +10,7 @@ import java.util.Set;
 
 @MappedSuperclass
 public class MusicEntity extends BaseEntity {
-
+    
     @Column(name = "genre")
     @NotEmpty
     private String genre;
@@ -18,6 +18,14 @@ public class MusicEntity extends BaseEntity {
     @Column(name = "title")
     @NotEmpty
     private String title;
+
+    public String getGenre() { return this.genre; }
+
+    public void setGenre(String genre) { this.genre = genre; }
+
+    public String getTitle() { return this.title; }
+
+    public void setTitle(String title) { this.title = title; }
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "musicEntity")
 //    private Set<Artist> artists;
