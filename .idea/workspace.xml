@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41c63ae9-a8d5-4f71-9c7d-6ff5b70d879e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java" />
-    </list>
+    <list default="true" id="41c63ae9-a8d5-4f71-9c7d-6ff5b70d879e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +50,8 @@
       <file leaf-file-name="MusicEntity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="435">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="30" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -291,12 +288,12 @@
       <workItem from="1518309106304" duration="3195000" />
       <workItem from="1518392765042" duration="1119000" />
       <workItem from="1519224677882" duration="31000" />
-      <workItem from="1519224732790" duration="754000" />
+      <workItem from="1519224732790" duration="1652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7247000" />
+    <option name="totallyTimeSpent" value="8145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -488,8 +485,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="30" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
