@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import java.util.Set;
+import org.springframework.beatbrowser.artist.Artist;
 
 @MappedSuperclass
 public class MusicEntity extends BaseEntity {
@@ -27,8 +28,8 @@ public class MusicEntity extends BaseEntity {
 
     public void setTitle(String title) { this.title = title; }
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "musicEntity")
-//    private Set<Artist> artists;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "musicEntity")
+    private Set<Artist> artists;
 
 
 }
