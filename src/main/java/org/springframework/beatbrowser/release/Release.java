@@ -38,6 +38,6 @@ public class Release extends MusicEntity {
         if (artist.isNew()) {
             getArtistsInternal().add(artist);
         }
-        artist.setRelease(this);
+//        artist.setRelease(this);
     }
 }
