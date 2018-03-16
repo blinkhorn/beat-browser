@@ -30,7 +30,9 @@ public class Artist extends NamedEntity {
         return this.releases;
     }
 
-    protected void setReleasesInternal(Set<Release> releases) { this.releases = releases; }
+
+
+    public void setReleases(Set<Release> releases) { this.releases = releases; }
 
     public List<Release> getReleases() {
         List<Release> sortedReleases = new ArrayList<Release>(getReleasesInternal());

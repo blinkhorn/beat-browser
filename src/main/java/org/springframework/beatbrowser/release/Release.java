@@ -27,7 +27,7 @@ public class Release extends MusicEntity {
         return this.artists;
     }
 
-    protected void getArtistsInternal(Set<Artist> artists) { this.artists = artists; }
+    protected void setArtistsInternal(Set<Artist> artists) { this.artists = artists; }
 
     public List<Artist> getArtists() {
         List<Artist> sortedArtists = new ArrayList<Artist>(getArtistsInternal());
@@ -40,6 +40,6 @@ public class Release extends MusicEntity {
         if (artist.isNew()) {
             getArtistsInternal().add(artist);
         }
-//        artist.setRelease(this);
+        artist.setReleases((Set<Release>) this);
     }
 }
