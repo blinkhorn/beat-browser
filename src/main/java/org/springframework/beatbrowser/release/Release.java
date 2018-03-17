@@ -40,6 +40,8 @@ public class Release extends MusicEntity {
         this.artists = artists;
     }
 
+    public void setArtists(Set<Artist> artists) { this.artists = artists; }
+
     public List<Artist> getArtists() {
         List<Artist> sortedArtists = new ArrayList<Artist>(getArtistsInternal());
         PropertyComparator.sort(sortedArtists,

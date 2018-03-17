@@ -4,6 +4,7 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.beatbrowser.model.NamedEntity;
 import org.springframework.beatbrowser.release.Release;
+import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -47,9 +48,9 @@ public class Artist extends NamedEntity {
         return this.releases;
     }
 
-
-
-    public void setReleases(Set<Release> releases) { this.releases = releases; }
+    public void setReleases(Set<Release> releases) {
+        this.releases = releases;
+    }
 
     public List<Release> getReleases() {
         List<Release> sortedReleases = new ArrayList<Release>(getReleasesInternal());
@@ -62,8 +63,49 @@ public class Artist extends NamedEntity {
         if (release.isNew()) {
             getReleasesInternal().add(release);
         }
-//        release.setArtist(this);
+        release.setArtists((Set<Artist>) this);
     }
 
+    /**
+     * Return the Release with the given title, or null if none found for this Artist.
+     *
+     * @param title to test
+     * @return true if release title is already in use
+     */
+    public Release getRelease(String title) {
+        return getRelease(title, false);
+    }
+
+    /**
+     * Return the Release with the given title, or null if none found for this Artist.
+     *
+     * @param title to test
+     * @return true if release title is already in use
+     */
+    public Release getRelease(String title, boolean ignoreNew) {
+        title = title.toLowerCase();
+        for (Release release : getReleasesInternal()) {
+            if (!ignoreNew || !release.isNew()) {
+                String compName = release.getTitle();
+                compName = compName.toLowerCase();
+                if (compName.equals(title)) {
+                    return release;
+                }
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringCreator(this)
+
+                .append("id", this.getId())
+                .append("new", this.isNew())
+                .append("name", this.getName())
+                .append("dob", this.dob)
+                .append("nationality", this.nationality)
+                .append("releases", this.releases).toString();
+    }
 
 }
