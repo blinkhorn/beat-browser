@@ -12,6 +12,7 @@ import java.util.*;
 @Entity
 @Table(name = "artists")
 public class Artist extends NamedEntity {
+
     @Column(name = "dob") //date of birth
     @NotEmpty
     private String dob;
@@ -22,6 +23,22 @@ public class Artist extends NamedEntity {
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "artist")
     private Set<Release> releases;
+
+    public String getDob() {
+        return this.dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getNationality() {
+        return this.nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
 
     protected Set<Release> getReleasesInternal() {
         if (this.releases == null) {

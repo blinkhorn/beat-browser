@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="41c63ae9-a8d5-4f71-9c7d-6ff5b70d879e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/BaseEntity.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/BaseEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Release.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Release.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1306">
+            <state relative-caret-position="1440">
               <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,13 +117,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Artist.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Artist.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="480">
+              <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
+                <element signature="e#979#980#0" expanded="true" />
+                <element signature="e#1025#1026#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,11 +164,11 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Track.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/NamedEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/BaseEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" />
       </list>
     </option>
   </component>
@@ -406,12 +412,12 @@
       <workItem from="1520858565952" duration="8913000" />
       <workItem from="1521224160872" duration="2079000" />
       <workItem from="1521319055972" duration="38000" />
-      <workItem from="1521319137279" duration="1810000" />
+      <workItem from="1521319137279" duration="2288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30694000" />
+    <option name="totallyTimeSpent" value="31172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -533,6 +539,14 @@
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -607,6 +621,14 @@
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1110,19 +1132,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1306">
+        <state relative-caret-position="1440">
           <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1135,6 +1147,24 @@
             <element signature="e#1243#1251#0" expanded="true" />
             <element signature="e#1868#1869#0" expanded="true" />
             <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
           </folding>
         </state>
       </provider>
