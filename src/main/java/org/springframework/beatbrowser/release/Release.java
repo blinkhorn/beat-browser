@@ -42,4 +42,35 @@ public class Release extends MusicEntity {
         }
         artist.setReleases((Set<Release>) this);
     }
+
+    /**
+     * Return the Artist with the given name, or null if none found for this Release.
+     *
+     * @param name to test
+     * @return true if artist name is already in use
+     */
+    public Artist getArtist(String name) {
+        return getArtist(name, false);
+    }
+
+    /**
+     * Return the Artist with the given name, or null if none found for this Release.
+     *
+     * @param name to test
+     * @return true if artist name is already in use
+     */
+    public Artist getArtist(String name, boolean ignoreNew) {
+        name = name.toLowerCase();
+        for (Artist artist : getArtistsInternal()) {
+            if (!ignoreNew || !artist.isNew()) {
+                String compName = artist.getName();
+                compName = compName.toLowerCase();
+                if (compName.equals(name)) {
+                    return artist;
+                }
+            }
+        }
+        return null;
+    }
+
 }
