@@ -4,6 +4,7 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.beatbrowser.artist.Artist;
 import org.springframework.beatbrowser.model.MusicEntity;
+import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -20,6 +21,14 @@ public class Release extends MusicEntity {
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "releases")
     private Set<Artist> artists;
 
+    public int getNumberTracks() {
+        return this.numberTracks;
+    }
+
+    public void setNumberTracks(int numberTracks) {
+        this.numberTracks = numberTracks;
+    }
+
     protected Set<Artist> getArtistsInternal() {
         if (this.artists == null) {
             this.artists = new HashSet<Artist>();
@@ -27,7 +36,9 @@ public class Release extends MusicEntity {
         return this.artists;
     }
 
-    protected void setArtistsInternal(Set<Artist> artists) { this.artists = artists; }
+    protected void setArtistsInternal(Set<Artist> artists) {
+        this.artists = artists;
+    }
 
     public List<Artist> getArtists() {
         List<Artist> sortedArtists = new ArrayList<Artist>(getArtistsInternal());
@@ -71,6 +82,18 @@ public class Release extends MusicEntity {
             }
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringCreator(this)
+
+                .append("id", this.getId())
+                .append("new", this.isNew())
+                .append("genre", this.getGenre())
+                .append("title", this.getTitle())
+                .append("numberTracks", this.numberTracks)
+                .append("artists", this.artists).toString();
     }
 
 }

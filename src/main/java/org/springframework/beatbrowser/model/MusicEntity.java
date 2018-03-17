@@ -17,14 +17,19 @@ public class MusicEntity extends BaseEntity {
     private String title;
 
 
+    public String getGenre() {
+        return this.genre;
+    }
 
-    public String getGenre() { return this.genre; }
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
-    public void setGenre(String genre) { this.genre = genre; }
+    public String getTitle() {
+        return this.title;
+    }
 
-    public String getTitle() { return this.title; }
-
-    public void setTitle(String title) { this.title = title; }
-
-
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
