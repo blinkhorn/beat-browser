@@ -17,7 +17,7 @@ public class Release extends MusicEntity {
 
     @Column(name = "numberTracks")
     @NotEmpty
-    private Integer numberTracks;
+    private int numberTracks;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "releases")
     private Set<Artist> artists;
@@ -28,7 +28,7 @@ public class Release extends MusicEntity {
     @ManyToOne(cascade = CascadeType.ALL)
     private Label label;
 
-    public Integer getNumberTracks() {
+    public int getNumberTracks() {
         return this.numberTracks;
     }
 

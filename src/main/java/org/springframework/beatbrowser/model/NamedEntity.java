@@ -15,7 +15,7 @@ public class NamedEntity extends BaseEntity {
 
     @Column(name = "year")
     @NotEmpty
-    private Integer year;
+    private int year;
 
     @Column(name = "country")
     @NotEmpty
@@ -29,7 +29,7 @@ public class NamedEntity extends BaseEntity {
         this.name = name;
     }
 
-    public Integer getYear() {
+    public int getYear() {
         return this.year;
     }
 
