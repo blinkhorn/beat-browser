@@ -6,40 +6,20 @@ import org.springframework.beatbrowser.model.NamedEntity;
 import org.springframework.beatbrowser.release.Release;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.*;
 
 @Entity
 @Table(name = "artists")
 public class Artist extends NamedEntity {
 
-    @Column(name = "dob") //date of birth
-    @NotEmpty
-    private String dob;
-
-    @Column(name = "nationality")
-    @NotEmpty
-    private String nationality;
-
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "artist")
     private Set<Release> releases;
 
-    public String getDob() {
-        return this.dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
-    public String getNationality() {
-        return this.nationality;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
+//    @ManyToMany(cascde )
 
     protected Set<Release> getReleasesInternal() {
         if (this.releases == null) {
@@ -103,8 +83,6 @@ public class Artist extends NamedEntity {
                 .append("id", this.getId())
                 .append("new", this.isNew())
                 .append("name", this.getName())
-                .append("dob", this.dob)
-                .append("nationality", this.nationality)
                 .append("releases", this.releases).toString();
     }
 
