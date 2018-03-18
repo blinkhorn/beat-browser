@@ -86,7 +86,8 @@ public class Artist extends NamedEntity {
                 .append("name", this.getName())
                 .append("year", this.getYear())
                 .append("country", this.getCountry())
-                .append("releases", this.releases).toString();
+                .append("releases", this.releases)
+                .append("labels", this.labels).toString();
     }
 
 }
