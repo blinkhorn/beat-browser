@@ -21,12 +21,72 @@ public class Release extends MusicEntity {
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "releases")
     private Set<Artist> artists;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "releases")
+    private Set<Track> tracks;
+
     public int getNumberTracks() {
         return this.numberTracks;
     }
 
     public void setNumberTracks(int numberTracks) {
         this.numberTracks = numberTracks;
+    }
+
+    protected Set<Track> getTracksInternal() {
+        if (this.tracks == null) {
+            this.tracks = new HashSet<Track>();
+        }
+        return this.tracks;
+    }
+
+    protected void setTracksInternal(Set<Track> tracks) {
+        this.tracks = tracks;
+    }
+
+    public void setTracks(Set<Track> tracks) { this.tracks = tracks; }
+
+    public List<Track> getTracks() {
+        List<Track> sortedTracks = new ArrayList<Track>(getTracksInternal());
+        PropertyComparator.sort(sortedTracks,
+                new MutableSortDefinition("title", true, true));
+        return Collections.unmodifiableList(sortedTracks);
+    }
+
+    public void addTrack(Track track) {
+        if (track.isNew()) {
+            getTracksInternal().add(track);
+        }
+        track.setRelease(this);
+    }
+
+    /**
+     * Return the Track with the given title, or null if none found for this Release.
+     *
+     * @param title to test
+     * @return true if track title is already in use
+     */
+    public Track getTrack(String title) {
+        return getTrack(title, false);
+    }
+
+    /**
+     * Return the Track with the given title, or null if none found for this Release.
+     *
+     * @param title to test
+     * @return true if track title is already in use
+     */
+    public Track getTrack(String title, boolean ignoreNew) {
+        title = title.toLowerCase();
+        for (Track track : getTracksInternal()) {
+            if (!ignoreNew || !track.isNew()) {
+                String compName = track.getTitle();
+                compName = compName.toLowerCase();
+                if (compName.equals(title)) {
+                    return track;
+                }
+            }
+        }
+        return null;
     }
 
     protected Set<Artist> getArtistsInternal() {
@@ -95,7 +155,8 @@ public class Release extends MusicEntity {
                 .append("genre", this.getGenre())
                 .append("title", this.getTitle())
                 .append("numberTracks", this.numberTracks)
-                .append("artists", this.artists).toString();
+                .append("artists", this.artists)
+                .append("tracks", this.tracks).toString();
     }
 
 }
