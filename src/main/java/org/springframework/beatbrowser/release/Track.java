@@ -10,7 +10,7 @@ public class Track extends Release {
     @NotEmpty
     private int length;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "release")
+    @ManyToOne(cascade = CascadeType.ALL)
     private Release release;
 
     public void setRelease(Release release) {

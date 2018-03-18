@@ -4,6 +4,7 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.beatbrowser.model.NamedEntity;
 import org.springframework.beatbrowser.release.Release;
+import org.springframework.beatbrowser.label.Label;
 import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.CascadeType;
@@ -19,7 +20,8 @@ public class Artist extends NamedEntity {
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "artist")
     private Set<Release> releases;
 
-//    @ManyToMany(cascde )
+    @ManyToMany(cascade = CascadeType.ALL,  mappedBy = "artist")
+    private Set<Label> labels;
 
     protected Set<Release> getReleasesInternal() {
         if (this.releases == null) {
@@ -79,10 +81,11 @@ public class Artist extends NamedEntity {
     @Override
     public String toString() {
         return new ToStringCreator(this)
-
                 .append("id", this.getId())
                 .append("new", this.isNew())
                 .append("name", this.getName())
+                .append("year", this.getYear())
+                .append("country", this.getCountry())
                 .append("releases", this.releases).toString();
     }
 

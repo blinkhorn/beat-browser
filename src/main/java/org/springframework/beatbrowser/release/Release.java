@@ -3,6 +3,7 @@ package org.springframework.beatbrowser.release;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.beatbrowser.artist.Artist;
+import org.springframework.beatbrowser.label.Label;
 import org.springframework.beatbrowser.model.MusicEntity;
 import org.springframework.core.style.ToStringCreator;
 
@@ -23,6 +24,9 @@ public class Release extends MusicEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "releases")
     private Set<Track> tracks;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Label label;
 
     public int getNumberTracks() {
         return this.numberTracks;
