@@ -78,6 +78,60 @@ public class Artist extends NamedEntity {
         return null;
     }
 
+    protected Set<Label> getLabelsInternal() {
+        if (this.labels == null) {
+            this.labels = new HashSet<Label>();
+        }
+        return this.labels;
+    }
+
+    public void setLabels(Set<Label> labels) {
+        this.labels = labels;
+    }
+
+    public List<Label> getLabels() {
+        List<Label> sortedLabels = new ArrayList<Label>(getLabelsInternal());
+        PropertyComparator.sort(sortedLabels,
+                new MutableSortDefinition("name", true, true));
+        return Collections.unmodifiableList(sortedLabels);
+    }
+
+    public void addLabel(Label label) {
+        if (label.isNew()) {
+            getLabelsInternal().add(label);
+        }
+        label.setArtists((Set<Artist>) this);
+    }
+
+    /**
+     * Return the Label with the given name, or null if none found for this Artist.
+     *
+     * @param name to test
+     * @return true if label name is already in use
+     */
+    public Label getLabel(String name) {
+        return getLabel(name, false);
+    }
+
+    /**
+     * Return the Label with the given name, or null if none found for this Artist.
+     *
+     * @param name to test
+     * @return true if label name is already in use
+     */
+    public Label getLabel(String name, boolean ignoreNew) {
+        name = name.toLowerCase();
+        for (Label label : getLabelsInternal()) {
+            if (!ignoreNew || !label.isNew()) {
+                String compName = label.getName();
+                compName = compName.toLowerCase();
+                if (compName.equals(name)) {
+                    return label;
+                }
+            }
+        }
+        return null;
+    }
     @Override
     public String toString() {
         return new ToStringCreator(this)
