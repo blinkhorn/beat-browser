@@ -47,7 +47,7 @@ public class Label extends NamedEntity {
     }
 
     /**
-     * Return the Artist with the given name, or null if none found for this Release.
+     * Return the Artist with the given name, or null if none found for this Label.
      *
      * @param name to test
      * @return true if artist name is already in use
@@ -57,7 +57,7 @@ public class Label extends NamedEntity {
     }
 
     /**
-     * Return the Artist with the given name, or null if none found for this Release.
+     * Return the Artist with the given name, or null if none found for this Label.
      *
      * @param name to test
      * @return true if artist name is already in use
@@ -76,5 +76,61 @@ public class Label extends NamedEntity {
         return null;
     }
 
+    protected Set<Release> getReleasesInternal() {
+        if (this.releases == null) {
+            this.releases = new HashSet<Release>();
+        }
+        return this.releases;
+    }
+
+    protected void setReleaasesInternal(Set<Release> releases) {
+        this.releases = releases;
+    }
+
+    public void setReleases(Set<Release> releases) { this.releases = releases; }
+
+    public List<Release> getReleases() {
+        List<Release> sortedReleases = new ArrayList<Release>(getReleasesInternal());
+        PropertyComparator.sort(sortedReleases,
+                new MutableSortDefinition("title", true, true));
+        return Collections.unmodifiableList(sortedReleases);
+    }
+
+    public void addRelease(Release release) {
+        if (release.isNew()) {
+            getReleasesInternal().add(release);
+        }
+        release.setLabel(this);
+    }
+
+    /**
+     * Return the Release with the given title, or null if none found for this Label
+     *
+     * @param title to test
+     * @return true if release title is already in use
+     */
+    public Release getRelease(String title) {
+        return getRelease(title, false);
+    }
+
+    /**
+     * Return the Release with the given title, or null if none found for this Label.
+     *
+     * @param title to test
+     * @return true if release title is already in use
+     */
+    public Release getRelease(String title, boolean ignoreNew) {
+        title = title.toLowerCase();
+        for (Release release : getReleasesInternal()) {
+            if (!ignoreNew || !release.isNew()) {
+                String compName = release.getTitle();
+                compName = compName.toLowerCase();
+                if (compName.equals(title)) {
+                    return release;
+                }
+            }
+        }
+        return null;
+    }
 
 }

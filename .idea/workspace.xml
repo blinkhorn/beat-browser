@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41c63ae9-a8d5-4f71-9c7d-6ff5b70d879e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/label/Label.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/label/Label.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -109,15 +108,20 @@
       <file leaf-file-name="Label.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/label/Label.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="1349">
+              <caret line="102" column="29" lean-forward="true" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#901#902#0" expanded="true" />
                 <element signature="e#939#940#0" expanded="true" />
                 <element signature="e#1108#1116#0" expanded="true" />
-                <element signature="e#1729#1730#0" expanded="true" />
-                <element signature="e#1774#1775#0" expanded="true" />
+                <element signature="e#1727#1728#0" expanded="true" />
+                <element signature="e#1772#1773#0" expanded="true" />
+                <element signature="e#2664#2665#0" expanded="true" />
+                <element signature="e#2704#2705#0" expanded="true" />
+                <element signature="e#2882#2891#0" expanded="true" />
+                <element signature="e#3506#3507#0" expanded="true" />
+                <element signature="e#3553#3554#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,8 +130,8 @@
       <file leaf-file-name="Release.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="845">
-              <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+            <state relative-caret-position="2182">
+              <caret line="154" column="36" lean-forward="false" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#946#947#0" expanded="true" />
@@ -142,6 +146,10 @@
                 <element signature="e#3081#3082#0" expanded="true" />
                 <element signature="e#3875#3876#0" expanded="true" />
                 <element signature="e#3920#3921#0" expanded="true" />
+                <element signature="e#4770#4771#0" expanded="true" />
+                <element signature="e#4804#4805#0" expanded="true" />
+                <element signature="e#4898#4899#0" expanded="true" />
+                <element signature="e#4939#4940#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,6 +192,7 @@
       <find>integer</find>
       <find>release</find>
       <find>setReleases</find>
+      <find>setLabel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,10 +210,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/MusicEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Track.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/NamedEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/model/BaseEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/label/Label.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/artist/Artist.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/label/Label.java" />
       </list>
     </option>
   </component>
@@ -432,19 +441,19 @@
       <workItem from="1521319055972" duration="38000" />
       <workItem from="1521319137279" duration="3310000" />
       <workItem from="1521335453603" duration="7085000" />
-      <workItem from="1521728563742" duration="970000" />
+      <workItem from="1521728563742" duration="2532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40249000" />
+    <option name="totallyTimeSpent" value="41811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282353" sideWeight="0.5902778" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282353" sideWeight="0.5986111" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -454,7 +463,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.4097222" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.40138888" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1229,8 +1238,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/release/Release.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+        <state relative-caret-position="2182">
+          <caret line="154" column="36" lean-forward="false" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#946#947#0" expanded="true" />
@@ -1245,21 +1254,30 @@
             <element signature="e#3081#3082#0" expanded="true" />
             <element signature="e#3875#3876#0" expanded="true" />
             <element signature="e#3920#3921#0" expanded="true" />
+            <element signature="e#4770#4771#0" expanded="true" />
+            <element signature="e#4804#4805#0" expanded="true" />
+            <element signature="e#4898#4899#0" expanded="true" />
+            <element signature="e#4939#4940#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/springframework/beatbrowser/label/Label.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state relative-caret-position="1349">
+          <caret line="102" column="29" lean-forward="true" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#901#902#0" expanded="true" />
             <element signature="e#939#940#0" expanded="true" />
             <element signature="e#1108#1116#0" expanded="true" />
-            <element signature="e#1729#1730#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1727#1728#0" expanded="true" />
+            <element signature="e#1772#1773#0" expanded="true" />
+            <element signature="e#2664#2665#0" expanded="true" />
+            <element signature="e#2704#2705#0" expanded="true" />
+            <element signature="e#2882#2891#0" expanded="true" />
+            <element signature="e#3506#3507#0" expanded="true" />
+            <element signature="e#3553#3554#0" expanded="true" />
           </folding>
         </state>
       </provider>

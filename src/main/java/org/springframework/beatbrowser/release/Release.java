@@ -150,6 +150,23 @@ public class Release extends MusicEntity {
         return null;
     }
 
+    protected Label getLabelInternal() {
+        if (this.label == null) {
+            this.label = new Label();
+        }
+        return this.label;
+    }
+
+    protected void setLabelInternal(Label label) {
+        this.label = label;
+    }
+
+    public void setLabel(Label label) { this.label = label; }
+
+    public Label getLabel() {
+        return getLabelInternal();
+    }
+
     @Override
     public String toString() {
         return new ToStringCreator(this)
