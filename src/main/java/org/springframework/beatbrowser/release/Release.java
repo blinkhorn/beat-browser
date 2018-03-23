@@ -36,62 +36,7 @@ public class Release extends MusicEntity {
         this.numberTracks = numberTracks;
     }
 
-    protected Set<Track> getTracksInternal() {
-        if (this.tracks == null) {
-            this.tracks = new HashSet<Track>();
-        }
-        return this.tracks;
-    }
 
-    protected void setTracksInternal(Set<Track> tracks) {
-        this.tracks = tracks;
-    }
-
-    public void setTracks(Set<Track> tracks) { this.tracks = tracks; }
-
-    public List<Track> getTracks() {
-        List<Track> sortedTracks = new ArrayList<Track>(getTracksInternal());
-        PropertyComparator.sort(sortedTracks,
-                new MutableSortDefinition("title", true, true));
-        return Collections.unmodifiableList(sortedTracks);
-    }
-
-    public void addTrack(Track track) {
-        if (track.isNew()) {
-            getTracksInternal().add(track);
-        }
-        track.setRelease(this);
-    }
-
-    /**
-     * Return the Track with the given title, or null if none found for this Release.
-     *
-     * @param title to test
-     * @return true if track title is already in use
-     */
-    public Track getTrack(String title) {
-        return getTrack(title, false);
-    }
-
-    /**
-     * Return the Track with the given title, or null if none found for this Release.
-     *
-     * @param title to test
-     * @return true if track title is already in use
-     */
-    public Track getTrack(String title, boolean ignoreNew) {
-        title = title.toLowerCase();
-        for (Track track : getTracksInternal()) {
-            if (!ignoreNew || !track.isNew()) {
-                String compName = track.getTitle();
-                compName = compName.toLowerCase();
-                if (compName.equals(title)) {
-                    return track;
-                }
-            }
-        }
-        return null;
-    }
 
     protected Set<Artist> getArtistsInternal() {
         if (this.artists == null) {
@@ -144,6 +89,63 @@ public class Release extends MusicEntity {
                 compName = compName.toLowerCase();
                 if (compName.equals(name)) {
                     return artist;
+                }
+            }
+        }
+        return null;
+    }
+
+    protected Set<Track> getTracksInternal() {
+        if (this.tracks == null) {
+            this.tracks = new HashSet<Track>();
+        }
+        return this.tracks;
+    }
+
+    protected void setTracksInternal(Set<Track> tracks) {
+        this.tracks = tracks;
+    }
+
+    public void setTracks(Set<Track> tracks) { this.tracks = tracks; }
+
+    public List<Track> getTracks() {
+        List<Track> sortedTracks = new ArrayList<Track>(getTracksInternal());
+        PropertyComparator.sort(sortedTracks,
+                new MutableSortDefinition("title", true, true));
+        return Collections.unmodifiableList(sortedTracks);
+    }
+
+    public void addTrack(Track track) {
+        if (track.isNew()) {
+            getTracksInternal().add(track);
+        }
+        track.setRelease(this);
+    }
+
+    /**
+     * Return the Track with the given title, or null if none found for this Release
+     *
+     * @param title to test
+     * @return true if track title is already in use
+     */
+    public Release getTrack(String title) {
+        return getTrack(title, false);
+    }
+
+    /**
+     * Return the Track with the given title, or null if none found for this Release.
+     *
+     * @param title to test
+     * @return true if track title is already in use
+     */
+    public Track getTrack(String title, boolean ignoreNew) {
+        title = title.toLowerCase();
+        for (Track track : getTracksInternal()) {
+            if (!ignoreNew || !track.isNew()) {
+                String compName = track.getTitle();
+                compName = compName.toLowerCase();
+                if (compName.equals(title)) {
+                    return track;
                 }
             }
         }

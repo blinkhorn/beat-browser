@@ -13,7 +13,20 @@ public class Track extends Release {
     @ManyToOne(cascade = CascadeType.ALL)
     private Release release;
 
-    public void setRelease(Release release) {
+    protected Release getReleaseInternal() {
+        if (this.release == null) {
+            this.release = new Release();
+        }
+        return this.release;
+    }
+
+    protected void setReleaseInternal(Release release) {
         this.release = release;
+    }
+
+    public void setRelease(Release release) { this.release = release; }
+
+    public Release getRelease() {
+        return getReleaseInternal();
     }
 }
