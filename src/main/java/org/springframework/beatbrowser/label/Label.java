@@ -5,6 +5,7 @@ import org.springframework.beans.support.PropertyComparator;
 import org.springframework.beatbrowser.artist.Artist;
 import org.springframework.beatbrowser.release.Release;
 import org.springframework.beatbrowser.model.NamedEntity;
+import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.*;
 import java.util.*;
@@ -131,6 +132,19 @@ public class Label extends NamedEntity {
             }
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringCreator(this)
+
+                .append("id", this.getId())
+                .append("new", this.isNew())
+                .append("name", this.getName())
+                .append("year", this.getYear())
+                .append("country", this.getCountry())
+                .append("artists", this.artists)
+                .append("releases", this.releases).toString();
     }
 
 }
