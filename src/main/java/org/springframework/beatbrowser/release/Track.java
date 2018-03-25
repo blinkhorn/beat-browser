@@ -1,5 +1,7 @@
 package org.springframework.beatbrowser.release;
 
+import org.springframework.core.style.ToStringCreator;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
@@ -12,6 +14,14 @@ public class Track extends Release {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Release release;
+
+    public int getLength() {
+        return this.length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
 
     protected Release getReleaseInternal() {
         if (this.release == null) {
@@ -28,5 +38,20 @@ public class Track extends Release {
 
     public Release getRelease() {
         return getReleaseInternal();
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringCreator(this)
+
+                .append("id", this.getId())
+                .append("new", this.isNew())
+                .append("genre", this.getGenre())
+                .append("title", this.getTitle())
+                .append("artists", this.getArtists())
+                .append("label", this.getLabel())
+                .append("length", this.length)
+                .append("release", this.release).toString();
+
     }
 }
